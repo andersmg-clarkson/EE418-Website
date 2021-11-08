@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>register.html</title>
+</head>
+
+<body>
+  <h2 align=center>register page</h2>
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" />
+  </form>
+
+
+
+  <br></br>
+  <p align=center><a href='index.html'>index</a></p>
+  <p align=center><a href='login.html'>login</a></p>
+  <br></br>
+
+</body>
+
+</html>
