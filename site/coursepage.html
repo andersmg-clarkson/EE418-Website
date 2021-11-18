@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>EE418 Course Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="sidebar_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1"><img src = "logo.png" style="width:50px;height:50px;"></a>
+    <a href="#" class="w3-bar-item w3-button" id="login">Login</a>
+    <a href="#" class="w3-bar-item w3-button">Request Access</a>
+    <a href="coursepage.html" class="w3-bar-item w3-button w3-hide-small w3-hover-grey">Course</a>
+    <a href="projectpage.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Projects</a>
+  </div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="w3-modal">
+  <!-- Modal content -->
+  <div class="w3-modal-content">
+    <span class="close">&times;</span>
+    <p>User Name: </p> <input type="text">
+    <p>Password: </p> <input type="text">
+    <button id ="login_submit" class="w3-button">Submit</button>
+  </div>
+</div>
+<div class="w3-main">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 style ="color:rgb(0, 102, 0)">Course page</h1>
+      <button id="test">Tester</button>
+      <h4>This is filler text that would be occupied by details about the course itself </h4>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 style ="color:rgb(0, 102, 0)">Reference Materials</h1>
+      <h4>This is filler text that would be occupied by content like: </h4>
+      <p><a href="#">the syllabus,</a> </p>
+      <p><a href="#">project description,</a> </p>
+      <p><a href="#">assignments, etc,</a> </p>
+      <h4>as well as the link to upload new content. </h4>
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 style ="color:rgb(0, 102, 0)">Project</h1>
+      <h2>This is filler text that would be occupied by the embedded GitHub repository for the course's project</h2>
+    </div>
+  </div>
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Website Design by Robbie Decker, Mike Anderson, Tobias Martin, James Alongi and Ted Kane</h4>
+      <h5>Contact us: <a href="mailto:tomarti@clarkson.edu"  target="_blank">Here</a></h5>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+<div id="app"></div>
+    <script type="module" src="/main.js"></script>
+
+</body>
+</html>
