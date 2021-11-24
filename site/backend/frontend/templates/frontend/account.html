@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>account.html</title>
+</head>
+
+<body>
+  <h2 align=center>account page</h2>
+
+  <h3>User information</h3>
+
+  <!-- https://stackoverflow.com/questions/13713077/get-user-information-in-django-templates -->
+  <p>Username: {{ user.username }}</p>
+  <p>First Name: {{ user.first_name }}</p>
+  <p>Last Name: {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>Institution: {{ user.Profile.institution }}</p>
+  <p>Course: {{ user.Profile.course }}</p>
+
+  <br></br>
+
+  <!-- https://dev.to/earthcomfy/django-update-user-profile-33ho -->
+
+  <h3>Update information</h3>
+  <form method="POST">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <input type="submit" />
+  </form>
+
+  <br></br>
+
+  <a href="change_password.html">Change Password</a>
+
+  <br></br>
+
+  {% if user.is_superuser %}
+    <p align=center><a href='../admin'>user management</a></p>
+  {% endif %}
+
+
+  <br></br>
+  <p align=center><a href='home.html'>home</a></p>
+  <p align=center><a href='logout.html'>logout</a></p>
+  <br></br>
+
+</body>
+
+</html>

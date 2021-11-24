@@ -4,7 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('', views.default, name="default"),
     path('admin/', admin.site.urls),
-    path('frontend/', include('frontend.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('frontend/', include(('frontend.urls', 'frontend'), namespace='frontend')),
 ]
