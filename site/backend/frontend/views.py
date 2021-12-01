@@ -14,6 +14,16 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 def index(request):
     template = loader.get_template('frontend/index.html')
+
+    """
+    User = get_user_model()
+    all_users = User.objects.all()
+    all_users = User.objects.values()
+    print("INDEX TEST BEGIN")
+    print(all_users)
+    print("INDEX TEST END /n")
+    """
+
     context = {}
     return HttpResponse(template.render(context, request))
 
@@ -90,15 +100,24 @@ def login_view(request):
 # https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
 @transaction.atomic
 def register_view(request):
+
     next = request.GET.get('next')
-    form = registerForm(request.POST or None)
-    form2 = profileForm(request.POST or None)
+    rForm = registerForm(request.POST or None)
+    pForm = profileForm(request.POST or None)
 
-    if form.is_valid() and form2.is_valid():
-        user = form.save(commit=False)
-        form2.save(commit=False)
+    if rForm.is_valid() and pForm.is_valid():
+        #user = rForm.save(commit=False)
+        #pForm.save(commit=False)
 
-        password = form.cleaned_data.get('password')
+        user = rForm.save()
+        pForm.save(commit=False)
+
+        #user = form.save()
+        #profile = form2.save(commit=False)
+        #profile.user = user
+        #profile.save()
+
+        password = rForm.cleaned_data.get('password')
         user.set_password(password)
         user.save()
 
@@ -110,9 +129,34 @@ def register_view(request):
             return redirect(next)
         return redirect('login.html')
 
+    """
+    if request.method == 'POST':
+        rForm = registerForm(request.POST)
+        pForm = profileForm(request.POST)
+
+        if rForm.is_valid() and pForm.is_valid():
+            user = rForm.save()
+
+            profile = pForm.save(commit=False)
+            profile.user = user
+
+            profile.save()
+
+            username = rForm.cleaned_data.get('username')
+            password = rForm.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            login(request, user)
+
+            return redirect('login.html')
+
+    else:
+        rForm = registerForm()
+        pForm = profileForm()
+    """
+
     context = {
-        'form': form,
-        'form2': form2
+        'rForm': rForm,
+        'pForm': pForm
     }
 
     return render(request, "frontend/register.html", context)

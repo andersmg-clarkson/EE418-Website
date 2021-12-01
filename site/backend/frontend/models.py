@@ -27,6 +27,7 @@ class Profile(models.Model):
     course = models.CharField(max_length=40)
     accessLevel = models.IntegerField(default=0, editable=True)
 
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
