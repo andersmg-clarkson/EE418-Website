@@ -70,7 +70,7 @@ DATABASES = {
         #'NAME': 'C:\\Users\\All Users\\MySQL\\MySQL Server 8.0\\Data\\seniordesign',
         'NAME': 'seniordesign',
         'USER': 'root',
-        'PASSWORD': 'SeniorDesign418',
+        'PASSWORD': 'SeniorDesign',
         #'HOST': 'DESKTOP-NDEO1QB',
         'HOST': '128.153.225.146',
         'PORT': '3306',
