@@ -118,6 +118,7 @@ def register_view(request):
         #profile.save()
 
         password = rForm.cleaned_data.get('password')
+
         user.set_password(password)
         user.save()
 

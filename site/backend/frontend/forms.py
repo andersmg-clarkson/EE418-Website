@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, get_user_model
 from .models import userdb, Profile
 from django.contrib.auth.models import User
 from django.forms import MultiWidget, TextInput
+from django.contrib.auth.password_validation import validate_password
+from django.core import validators
 
 User = get_user_model()
 
@@ -23,18 +25,19 @@ class loginForm(forms.Form):
             if not user.check_password(password):
                 raise forms.ValidationError('Incorrect password')
             if not user.is_active:
-                raise forms.ValidationError('This user is not active')
+                raise forms.ValidationError('This user is not active. Please contact the site administrator at deckerrj@clarkson.edu.')
 
         return super(loginForm, self).clean(*args, **kwargs)
 
 
+#https://stackoverflow.com/questions/47838632/django-adding-password-validations-in-a-modelform
 class registerForm(forms.ModelForm):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput())
+    username = forms.CharField(max_length=50,min_length=3)
+    password = forms.CharField(widget=forms.PasswordInput(), validators=[validate_password])
     password_confirm = forms.CharField(widget=forms.PasswordInput())
     email = forms.EmailField(label='Email Address')
-    first_name = forms.CharField()
-    last_name = forms.CharField()
+    first_name = forms.CharField(max_length=50,min_length=2)
+    last_name = forms.CharField(max_length=50,min_length=2)
 
     class Meta:
         model = User
@@ -61,8 +64,8 @@ class registerForm(forms.ModelForm):
 
 
 class profileForm(forms.ModelForm):
-    institution = forms.CharField()
-    course = forms.CharField()
+    institution = forms.CharField(max_length=75,min_length=3)
+    course = forms.CharField(max_length=75,min_length=3)
 
     class Meta:
         model = Profile

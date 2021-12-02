@@ -23,8 +23,8 @@ class userdb(models.Model):
 #https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    institution = models.CharField(max_length=40)
-    course = models.CharField(max_length=40)
+    institution = models.CharField(max_length=75)
+    course = models.CharField(max_length=75)
     accessLevel = models.IntegerField(default=0, editable=True)
 
 
