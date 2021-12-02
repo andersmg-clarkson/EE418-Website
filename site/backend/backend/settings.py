@@ -15,7 +15,10 @@ SECRET_KEY = 'django-insecure-g6lanfowj1q+pwntw6n@lw-sdmqmt_8+ld@o0t3ce68=7yl+!-
 DEBUG = True
 
 # python manage.py runserver 128.153.225.146:8000
-ALLOWED_HOSTS = ['128.153.225.146', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['128.153.225.146', 'localhost', '127.0.0.1', '128.153.173.244']
+
+#add host onto mysql
+# https://stackoverflow.com/questions/50177216/how-to-grant-all-privileges-to-root-user-in-mysql-8-0
 
 
 # Application definition
