@@ -1,3 +1,16 @@
+/* 699A33 main */
+/* D8D83E secondary */
+:root {
+  --main: #699A33;
+  --main_darker: #284D00;
+  --secondary: #F6C805;
+  --good_grey: #EEE;
+}
+
+body {
+  padding: 15px;
+}
+
 /* Add a black background color to the top navigation */
 #topnav {
   margin:  0;
@@ -9,7 +22,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  background-color: #333;
+  background-color: var(--main);
   float: none;
   overflow: hidden;
 
@@ -50,7 +63,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #333;
+  background-color: var(--main_darker);
   color: white;
   text-align: left;
   padding: 14px 16px;
@@ -65,7 +78,7 @@
   margin: 0 auto;
   display: block;
   border-style: solid;
-  border-color: green;
+  border-color: var(--secondary);
   border-width: 5px;
 }
 
@@ -73,10 +86,10 @@
   margin: 35vh 35vw auto 35vw;
   padding: 10px;
   text-align: center;
-  background-color: rgb(208, 218, 208);
+  background-color: var(--good_grey);
   border-radius: 20px;
   border-style: solid;
-  border-color: green;
+  border-color: var(--secondary);
   border-width: 5px;
 }
 
