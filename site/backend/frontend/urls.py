@@ -11,6 +11,7 @@ urlpatterns = [
     path('home.html', views.home, name='home'),
     path('courses.html', views.courses, name='courses'),
     path('projects.html', views.projects, name='projects'),
+    path('repo_viewer', views.repo_viewer),
     path('account.html', views.account, name='account'),
     path('change_password.html', views.PasswordChangeView.as_view(success_url=reverse_lazy('frontend:account')), name='change_password'),
 ]
