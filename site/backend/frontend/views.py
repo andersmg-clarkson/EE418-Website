@@ -12,7 +12,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from github import Github, GithubException
 
-github_pat = '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'
+github_pat = ''
 
 def index(request):
     template = loader.get_template('frontend/index.html')
@@ -258,3 +258,17 @@ def has_clone_auth(django_user):
             #return True
 
     return False
+
+
+def gen_navbar():
+    return """
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/paper/bootstrap.min.css" />
+
+    <body style="background-color: aliceblue">
+    <ul class="nav navbar-nav">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="logout.html">Logout</a></li>
+    </ul>
+    <br><br>
+    """

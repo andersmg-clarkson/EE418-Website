@@ -71,16 +71,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        #'NAME': 'C:\\Users\\All Users\\MySQL\\MySQL Server 8.0\\Data\\seniordesign',
         'NAME': 'seniordesign',
-        'USER': 'rootTest',
-        'PASSWORD': 'SeniorDesign',
-        #'HOST': 'DESKTOP-NDEO1QB',
-        #'HOST': 'localhost',
-        #'HOST': '128.153.173.169',
-        'HOST': '128.153.225.146',
+        'USER': 'root',
+        'PASSWORD': 'SeniorDesign418',
+        'HOST': 'localhost',
         'PORT': '3306',
-        #'PORT': '',
     }
 }
 
