@@ -1,4 +1,6 @@
 {% load django_vite %}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% vite_hmr_client %}
   {% vite_asset 'js/main.js' %}
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <title>home.html</title>
   <style>
@@ -29,7 +30,7 @@
 
 <body>
   <div class="topnav">
-    <a class="active" href="home.html"><img src = "logo.png"style="width:40px;height:40px;"></a>
+    <a class="active" href="home.html"><img src = "{% static 'src/imgs/logo.png' %}" style="width:40px;height:40px;"></a>
     <a href="account.html">Account</a>
     <a href="courses.html">Course</a>
     <a href="projects.html">Projects</a>
@@ -45,7 +46,7 @@
   <p></p>
   <p></p>
   <p></p>
-  <img src="croppedscreenshot.png"style="width:600px;height:400px;" alt="A figure describing the difference between a course taught with project support and one without.">
+  <img src="{% static 'src/imgs/croppedscreenshot.png' %}" class="homepage_img" alt="A figure describing the difference between a course taught with project support and one without.">
   <p> Software engineering PBL scaffolded via active learning activities in classroom and lab and supported by project-specific guidance from instructors during office hours (Right), increases academic rigor and produces higher level of students learning and thus succeeding in PBL. Scaffolding and supports for PBL are provided as part of the curated course projects produced by this project.
 
   <h2> Table 1: Example Candidate Course Projects for Proposed Repository </h2>

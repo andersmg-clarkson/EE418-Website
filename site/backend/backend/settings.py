@@ -121,9 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/imgs/'
+
 
 # Where ViteJS assets are built.
-DJANGO_VITE_ASSETS_PATH = BASE_DIR / "static" / "dist"
+DJANGO_VITE_ASSETS_PATH = BASE_DIR / ".." / "static" / "dist"
 
 # If use HMR or not.
 DJANGO_VITE_DEV_MODE = DEBUG
@@ -139,3 +141,6 @@ STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print(BASE_DIR)
+print("hello is this working?")

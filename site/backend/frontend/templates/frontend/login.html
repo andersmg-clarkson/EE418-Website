@@ -1,25 +1,40 @@
+{% load django_vite %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-<title>login.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_hmr_client %}
+  {% vite_asset 'js/main.js' %}
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  </style>
+<title>Login Page</title>
 </head>
 
 <body>
-  <h2 align=center>login page</h2>
 
-  <form method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" />
-  </form>
+  <div class="topnav">
+    <a href="index.html"><img src = "{% static 'src/imgs/logo.png' %}" style="width:40px;height:40px;"></a>
+    <a class = "active" href="login.html">LOGIN</a>
+    <a href="register.html">REGISTER</a>
+  </div>
+  <div class = login>
+    <h2 align=center>Login</h2>
 
-  <!-- https://ordinarycoders.com/blog/article/django-password-reset -->
-  <p><a href='../accounts/password_reset'>forgot password?</a></p>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit" />
+    </form>
 
-  <br></br>
-  <p align=center><a href='index.html'>index</a></p>
-  <p align=center><a href='register.html'>register</a></p>
-  <br></br>
+    <!-- https://ordinarycoders.com/blog/article/django-password-reset -->
+    <p><a href='../accounts/password_reset'>forgot password?</a></p>
+    <p align=center><a href='register.html'>register</a></p>
+  </div>
 
 </body>
 

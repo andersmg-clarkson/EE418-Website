@@ -34,6 +34,11 @@
   color: black;
 }
 
+.topnav a.active:hover {
+  background-color: #ddd;
+  color: black;
+}
+
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: darkgrey;
@@ -52,3 +57,29 @@
 }
 
 .unbold { font-weight:normal; }
+
+.homepage_img {
+  object-fit: cover;
+  height: 400px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  border-style: solid;
+  border-color: green;
+  border-width: 5px;
+}
+
+.login {
+  margin: 35vh 35vw auto 35vw;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(208, 218, 208);
+  border-radius: 20px;
+  border-style: solid;
+  border-color: green;
+  border-width: 5px;
+}
+
+.login.p {
+  margin: 5px;
+}
