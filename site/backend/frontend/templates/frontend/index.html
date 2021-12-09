@@ -1,7 +1,12 @@
+{% load django_vite %}
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>index.html</title>
+{% vite_hmr_client %}
+{% vite_asset 'js/main.js' %}
+
 </head>
 
 <body>
@@ -10,6 +15,7 @@
   <br></br>
   <p align=center><a href='login.html'>login</a></p>
   <p align=center><a href='register.html'>register</a></p>
+  <p>does this change save?</p>
   <br></br>
 
 </body>
