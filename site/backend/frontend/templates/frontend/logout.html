@@ -1,11 +1,28 @@
+{% load django_vite %}
 <!DOCTYPE html>
 <html>
 <head>
-<title>logout.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_hmr_client %}
+  {% vite_asset 'js/main.js' %}
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <title>logout.html</title>
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  </style>
 </head>
 
 <body>
-  <h2 align=center>logout page</h2>
+  <div class="topnav">
+    <a class="active" href="home.html"><img src = "logo.png"style="width:40px;height:40px;"></a>
+    <a href="account.html">Account</a>
+    <a href="courses.html">Course</a>
+    <a href="projects.html">Projects</a>
+    <a href="logout.html">LOGOUT</a>
+  </div>
+  <br><br><h2 align=center>logout page</h2>
 
 </body>
 

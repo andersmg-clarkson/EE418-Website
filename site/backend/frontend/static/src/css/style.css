@@ -1,8 +1,54 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* Add a black background color to the top navigation */
+#topnav {
+  margin:  0;
+  padding: 0;
 }
+
+.topnav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  float: none;
+  overflow: hidden;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  height:  40px;
+  border-bottom: 12px;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: darkgrey;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+}
+
+.unbold { font-weight:normal; }
