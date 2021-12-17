@@ -83,7 +83,7 @@ body {
 }
 
 .login {
-  margin: 35vh 35vw auto 35vw;
+  margin: 35vh 30vw auto 30vw;
   padding: 10px;
   text-align: center;
   background-color: var(--good_grey);
