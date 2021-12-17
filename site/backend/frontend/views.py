@@ -12,7 +12,7 @@ from django.contrib.auth.views import PasswordChangeView
 from django.contrib.messages.views import SuccessMessageMixin
 from github import Github, GithubException
 
-github_pat = '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'
+github_pat = ''
 
 def index(request):
     template = loader.get_template('frontend/index.html')

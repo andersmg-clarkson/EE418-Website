@@ -141,6 +141,3 @@ STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-print(BASE_DIR)
-print("hello is this working?")
