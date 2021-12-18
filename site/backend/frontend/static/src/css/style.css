@@ -1,0 +1,98 @@
+/* 699A33 main */
+/* D8D83E secondary */
+:root {
+  --main: #699A33;
+  --main_darker: #284D00;
+  --secondary: #F6C805;
+  --good_grey: #EEE;
+}
+
+body {
+  padding: 15px;
+}
+
+/* Add a black background color to the top navigation */
+#topnav {
+  margin:  0;
+  padding: 0;
+}
+
+.topnav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--main);
+  float: none;
+  overflow: hidden;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  height:  40px;
+  border-bottom: 12px;
+
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: darkgrey;
+  color: white;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--main_darker);
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+}
+
+.unbold { font-weight:normal; }
+
+.homepage_img {
+  object-fit: cover;
+  height: 400px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+  border-style: solid;
+  border-color: var(--secondary);
+  border-width: 5px;
+}
+
+.login {
+  margin: 35vh 30vw auto 30vw;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--good_grey);
+  border-radius: 20px;
+  border-style: solid;
+  border-color: var(--secondary);
+  border-width: 5px;
+}
+
+.login.p {
+  margin: 5px;
+}

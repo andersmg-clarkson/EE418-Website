@@ -1,17 +1,340 @@
+{% load django_vite %}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>index.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_hmr_client %}
+  {% vite_asset 'js/main.js' %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <title>Homepage</title>
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+    html { overflow-y: scroll; }
+    body { position: absolute; }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th {
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+    tr:hover {background-color: #ddd;
+              color: black;}
+  </style>
 </head>
-
 <body>
-  <h2 align=center>index page (default)</h2>
+  <div class="topnav">
+    <a class="active" href="index.html"><img src = "{% static 'src/imgs/logo.png' %}" style="width:40px;height:40px;"></a>
+    <a href="login.html">LOGIN</a>
+    <a href="register.html">REGISTER</a>
+  </div>
 
-  <br></br>
-  <p align=center><a href='login.html'>login</a></p>
-  <p align=center><a href='register.html'>register</a></p>
-  <br></br>
+  <h1 style ="color:rgb(0, 102, 0);margin-top: 7vh;">Homepage</h1>
+  <h4> This project is being completed for the Clarkson University course EE418, Software Engineering Senior Design. The task is to complete a website that can be used to host reference materials and projects for both Clarkson and Virginia Commonwealth University. To access further materials, please Log In or Register to use the website. 
 
+    <h1> About Us </h1>
+    <p> The goal of this website is to provide sample projects for software engineering students and faculty alike to pull from for reference. The method of Project Based Learning (PBL) has proven effective and reliable, and the content of our site is to be used as another tool in the arsenal of a software engineer's curriculum. 
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <img src="{% static 'src/imgs/croppedscreenshot.png' %}" class="homepage_img" alt="A figure describing the difference between a course taught with project support and one without.">
+    <p> Software engineering PBL scaffolded via active learning activities in classroom and lab and supported by project-specific guidance from instructors during office hours (Right), increases academic rigor and produces higher level of students learning and thus succeeding in PBL. Scaffolding and supports for PBL are provided as part of the curated course projects produced by this project.
+  
+    <h2> Table 1: Example Candidate Course Projects for Proposed Repository </h2>
+    <table>
+      <tr>
+        <th>Open Source Project</th>
+        <th>Brief Description</th>
+        <th>Language</th>
+        <th>Domain</th>
+        <th>Platform</th>
+      </tr>
+      <tr>
+        <td>WordPress [52]</td>
+        <td>Open-source software for creating website, blog, or app.</td>
+        <td>PHP</td>
+        <td>Content Mgmt</td>
+        <td>Web</td>
+      </tr>
+      <tr>
+        <td>MuseScore [28]</td>
+        <td>Music notation and writing software.</td>
+        <td>C++ </td>
+        <td>Music</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>VSCode [53]</td>
+        <td>Microsoft's notation and writing software</td>
+        <td>JavaScript</td>
+        <td>Developer</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>Hunt [54]</td>
+        <td>Virtual scavenger hunt mobile app where players can join a game, select a team and solve hints to aquire treasure. The team with the most points wins.</td>
+        <td>Java</td>
+        <td>Gaming</td>
+        <td>Mobile</td>
+      </tr>
+      <tr>
+        <td>iTrust [55]</td>
+        <td>Electronic medical records web application that supports patients and medical staff in securely managing healthcare workflows.  </td>
+        <td>Java</td>
+        <td>Healthcare</td>
+        <td>Web</td>
+      </tr>
+      <tr>
+        <td>Qt [56]</td>
+        <td>Cross-platform application and UI framework, active developer community.  </td>
+        <td>C</td>
+        <td>Developer</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>SuperTuxKart [57]</td>
+        <td>3D open-source arcade racer with a variety characters, tracks, and modes to play.</td>
+        <td>C++ </td>
+        <td>Gaming</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>Xfig [58]</td>
+        <td>Vector graphics editor on UNIX like platforms, 27 figure libraries and supporting JPG, PNG, EPS.</td>
+        <td>Java</td>
+        <td>Tool</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>Mango [59]</td>
+        <td>Web-based (Tomcat, Ajax) platform for sensor and M2M control, data acquisition and visualization. </td>
+        <td>C++ </td>
+        <td>IoT</td>
+        <td>Web</td>
+      </tr>
+      <tr>
+        <td>Mozilla [60]</td>
+        <td>Well-known web browser with strong support for software engineering education.</td>
+        <td>C++ </td>
+        <td>Developer</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>WinMerge [61]</td>
+        <td>Text file merging and comparison tool for Windows used in software courses. </td>
+        <td>C++ </td>
+        <td>Developer</td>
+        <td>Desktop</td>
+      </tr>
+      <tr>
+        <td>Moodle [62]</td>
+        <td>Platform for educations/learners to create personalized learning enviroments. </td>
+        <td>PHP / JavaScript</td>
+        <td>Education</td>
+        <td>Web</td>
+      </tr>
+    </table>
+  
+    <h2> Table 2: Project Advisory Board </h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Affiliation</th>
+      </tr>
+      <tr>
+        <td>Dr. Lori Pollock</td>
+        <td>Professor</td>
+        <td>University of Delaware, USA</td>
+      </tr>
+      <tr>
+        <td>Dr. Rainer Koschke</td>
+        <td>Professor</td>
+        <td>Breman University, Germany</td>
+      </tr>
+      <tr>
+        <td>Dr. Jonathan Maletic</td>
+        <td>Professor</td>
+        <td>Kent State University, USA</td>
+      </tr>
+      <tr>
+        <td>Dr. Ahmed Hassan</td>
+        <td>Professor</td>
+        <td>NSERC/RIM Industrial Research Chair in Software Engineering, Queen's University, Canada</td>
+      </tr>
+      <tr>
+        <td>Dr. Timothy Lethbridge</td>
+        <td>Professor</td>
+        <td>University of Ottawa, Canada</td>
+      </tr>
+      <tr>
+        <td>Dr. Chanchal Roy</td>
+        <td>Professor</td>
+        <td>University of Saskatchewan, Canada</td>
+      </tr>
+      <tr>
+        <td>Dr. Keith Gallagher</td>
+        <td>Associate Professor</td>
+        <td>Florida Institute of Technology, USA</td>
+      </tr>
+      <tr>
+        <td>Dr. Andria Marcus</td>
+        <td>Professor</td>
+        <td>University of Texas at Dallas, USA</td>
+      </tr>
+    </table>
+  
+    <h2> Table 3: 12 Volunteer Instructors from Nine Universities</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Affiliation</th>
+        <th>Course ID/Title</th>
+        <th>Semester, Enrollment, #TA</th>
+      </tr>
+      <tr>
+        <td>Dr. Jonathan Maletic</td>
+        <td>Professor</td>
+        <td>Kent State University, USA</td>
+        <td>CS 33901- Software Engineering</td>
+        <td>Spring and Fall, 50 students, 1/2 grader</td>
+      </tr>
+      <tr>
+        <td>Dr. Jinghui Cheng</td>
+        <td>Assistant Professor</td>
+        <td>Polytechnique Montreal, Canada</td>
+        <td>LOG3000- Software Engineering Process</td>
+        <td>Winter and Fall, 100 students, 2 TA's</td>
+      </tr>
+      <tr>
+        <td>Dr. Hui Zhang</td>
+        <td>Assistant Professor</td>
+        <td>University of Louisville, USA</td>
+        <td>CECS 550- Software Engineering</td>
+        <td>Spring and Fall, 30 students</td>
+      </tr>
+      <tr>
+        <td>Dr. Kostadin Damevski, Dr. David Shepherd, Ms. Debera Duke</td>
+        <td>Professors</td>
+        <td>VCU, USA</td>
+        <td>CMSC 355- Software Engineering: Specification and Design</td>
+        <td>Spring and Fall, 90 students, two TA's</td>
+      </tr>
+      <tr>
+        <td>Dr. Hakam Alomari</td>
+        <td>Assistant Professor</td>
+        <td>Miami University, USA</td>
+        <td>CSE 211- Software Construction</td>
+        <td>Spring, 70 students in two sections</td>
+      </tr>
+      <tr>
+        <td>Dr. Chanchal Roy</td>
+        <td>Professor</td>
+        <td>University of Saskatchewan, Canada</td>
+        <td>CMPT 470/816- Advanced Software Engineering</td>
+        <td>Fall, 40 students, one TA</td>
+      </tr>
+      <tr>
+        <td>Dr. Andrian Marcus</td>
+        <td>Professor</td>
+        <td>University of Texas at Dallas, USA</td>
+        <td>CS/SE3354- Software Engineering</td>
+        <td>Spring and Fall, several sections, 60 students and one TA per section</td>
+      </tr>
+      <tr>
+        <td>Dr. Andrian Marcus</td>
+        <td>Professor</td>
+        <td>University of Texas at Dallas, USA</td>
+        <td>CS/SE6356- Software Maintenance, Evolution and Reengineering</td>
+        <td>Fall, 35 students, one TA</td>
+      </tr>
+      <tr>
+        <td>Dr. Yu Liu</td>
+        <td>Assistant Professor</td>
+        <td>CU, USA</td>
+        <td>EE 368- Introduction to Software Engineering</td>
+        <td>Fall, 40 students, one TA</td>
+      </tr>
+      <tr>
+        <td>Dr. Mohamed Mkaouer</td>
+        <td>Assistant Professor</td>
+        <td>RIT, USA</td>
+        <td>SWEN 777 - Software Quality Insurance</td>
+        <td>Spring, 20 students</td>
+      </tr>
+      <tr>
+        <td>Dr. Marios-Eleftherios Fokaefs</td>
+        <td>Assistant Professor</td>
+        <td>Polytechnique Montreal, Canada</td>
+        <td>LOG8430- Software Architecture and Advanced Design</td>
+        <td>Winter and Fall, 30-90 students, 1-3 TA's</td>
+      </tr>
+      <tr>
+        <td>Dr. Marios-Eleftherios Fokaefs</td>
+        <td>Assistant Professor</td>
+        <td>Polytechnique Montreal, Canada</td>
+        <td>LOG8371- Software Quality Engineering</td>
+        <td>Winter and Fall, 140-170 students, 3-4 TA's</td>
+      </tr>
+    </table>
+  
+    <h2> Table 4: Project Management Plan</h2>  
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Affiliation</th>
+        <th>Role & Expertise</th>
+        <th>Responsibilities</th>
+      </tr>
+      <tr>
+        <td>Daqing Hou</td>
+        <td>Electrical & Comp. Engrg., CU</td>
+        <td>PI; software engineering education & research</td>
+        <td>General project management and oversight, coordination with VCU, lead on development of course projects and reference course, and dissemination</td>
+      </tr>
+      <tr>
+        <td>Yu Liu</td>
+        <td>Electrical & Comp. Engrg., CU</td>
+        <td>co-PI; software engineering education</td>
+        <td>Development of course projects and reference course, teaching with developed materials</td>
+      </tr>
+      <tr>
+        <td>Jan E. DeWaters</td>
+        <td>Institute for STEM Education and Coulter School of Engineering, CU</td>
+        <td>co-PI; engineering education research</td>
+        <td>Design and development of assessment tools, data analysis and interpretation, liaison to external evaluator</td>
+      </tr>
+      <tr>
+        <td>Mary Margaret Small</td>
+        <td>Ed.D. Office of Educ. Partnerships, CU</td>
+        <td>External Evaluator; STEM education</td>
+        <td>Organization and implementation of all assessment components; evaluation of overall program outcomes</td>
+      </tr>
+      <tr>
+        <td>David Shepherd</td>
+        <td>PhD Computer Science, VCU</td>
+        <td>PI; SE education & research, a decade of industrial research</td>
+        <td>Project management, coordination with CU, development of course projects and reference course, teaching with developed materials, lead on workshops</td>
+      </tr>
+    </table>
+   
+    <h1 style ="color:rgb(0, 102, 0);margin-bottom: 13vh;">Homepage</h1>
+    
+
+  <div class="footer">
+    <h2 class = "unbold"> Website Design by Robbie Decker, Mike Anderson, Tobias Martin, James Alongi and Ted Kane </h2>
+    <h3 class = "unbold"> Contact us: 
+      <a href="mailto:tomarti@clarkson.edu" target="_blank">Here</a>
+    </h3>
+  </div>
 </body>
 
 </html>
+

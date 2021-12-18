@@ -1,17 +1,62 @@
+{% load django_vite %}
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-<title>courses.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_hmr_client %}
+  {% vite_asset 'js/main.js' %}
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <title>courses.html</title>
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  </style>
 </head>
 
 <body>
-  <h2 align=center>courses page</h2>
+  <div class="topnav">
+    <a href="home.html"><img src = "{% static 'src/imgs/logo.png' %}"style="width:40px;height:40px;"></a>
+    <a href="account.html">Account</a>
+    <a class="active" href="courses.html">Course</a>
+    <a href="projects.html">Projects</a>
+    <a href="logout.html">LOGOUT</a>
+  </div>
+  <br><br><h1 align=center>Reference Course</h1>
 
-  <br></br>
+  <h2>EE418 Software Engineering Senior Design</h2>
+  <p>Study of the principles and practices of software engineering. Topics include software
+    engineering tools, process models, software requirements analysis, design methodologies,
+    software testing, and software maintenance. Hands-on experience building a software system
+    using the waterfall life cycle model and multiple software engineering tools. Working in a team
+    environment, students will develop all life cycle deliverables: requirements document, design
+    documents, test plan and test suites, source codes, and user manuals</p>
+    <h2>Course Syllabus: </h2>
+  <p><a href="{% static '/src/imgs/EE418-2021Fall.pdf' %}" download target='_blank'>syllabus</a></p>
+  <br>
+  <h2>Course Lectures:</h2>
+  <p><a href="{% static '/src/imgs/L01 - Introduction.pdf' %}" target='_blank'>L01 - Introduction</a></p>
+  <p><a href="{% static '/src/imgs/L02 - SW Processes.pdf' %}" target='_blank'>L02 - SW Processes</a></p>
+  <p><a href="{% static '/src/imgs/L03 - Agile SW Dev.pdf' %}" target='_blank'>L03 - Agile SW Dev</a></p>
+  <p><a href="{% static '/src/imgs/L04 - Req Eng.pdf' %}" target='_blank'>L04 - Req Eng</a></p>
+  <p><a href="{% static '/src/imgs/L05 - Architectural design.pdf' %}" target='_blank'>L05 - Architectural design</a></p>
+  <p><a href="{% static '/src/imgs/L06 - Design & Implementation.pdf' %}" target='_blank'>L06 - Implementation</a></p>
+  <p><a href="{% static '/src/imgs/L07 - Implementation.pdf' %}" target='_blank'>L07 - Implementation</a></p>
+  <p><a href="{% static '/src/imgs/L08 - Testing.pdf' %}" target='_blank'>L08 - Testing</a></p>
+  <p><a href="{% static '/src/imgs/L09 - Evolution.pdf' %}" target='_blank'>L09 - Evolution</a></p>
+  <p><a href="{% static '/src/imgs/L10 - software security assurance process.pdf' %}"  target='_blank'>L10 - software security assurance process</a></p>
+  <br>
+
+  <h2>Project Description</h2>
+  <p><a href="{% static '/src/imgs/iuse-website.docx' %}" target='_blank'>NSF IUSE Project Website Feature List</a></p>
+
+
+  <!--<br></br>
   <p align=center><a href='home.html'>home</a></p>
   <p align=center><a href='projects.html'>projects</a></p>
   <p align=center><a href='logout.html'>logout</a></p>
-  <br></br>
+  <br></br>-->
 
 </body>
 

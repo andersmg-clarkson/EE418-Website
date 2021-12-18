@@ -1,17 +1,35 @@
+{% load django_vite %}
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>projects.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% vite_hmr_client %}
+  {% vite_asset 'js/main.js' %}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <title>Projects</title>
+  <style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+  </style>
 </head>
 
 <body>
-  <h2 align=center>projects page</h2>
+  <div class="topnav">
+    <a href="home.html"><img src = "{% static 'src/imgs/logo.png' %}" style="width:40px;height:40px;"></a>
+    <a href="account.html">Account</a>
+    <a href="courses.html">Course</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="logout.html">LOGOUT</a>
+  </div>
+  <br><br><h2 align=center>projects page</h2>
 
-  <br></br>
+  <!--<br></br>
   <p align=center><a href='home.html'>home</a></p>
   <p align=center><a href='courses.html'>courses</a></p>
   <p align=center><a href='logout.html'>logout</a></p>
-  <br></br>
+  <br></br>-->
 
 </body>
 
